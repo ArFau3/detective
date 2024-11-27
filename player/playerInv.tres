@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=13 format=3 uid="uid://4iurfgyijgan"]
+
+[ext_resource type="Script" path="res://interactables/items/item.gd" id="1_mjj62"]
+[ext_resource type="Script" path="res://player/inventory.gd" id="2_1n2qt"]
+
+[sub_resource type="Resource" id="Resource_1qgnj"]
+script = ExtResource("1_mjj62")
+name = ""
+rightItem = false
+description = ""
+
+[sub_resource type="Resource" id="Resource_q1qb7"]
+script = ExtResource("1_mjj62")
+name = ""
+rightItem = false
+description = ""
+
+[sub_resource type="Resource" id="Resource_ly7j4"]
+script = ExtResource("1_mjj62")
+name = ""
+rightItem = false
+description = ""
+
+[sub_resource type="Resource" id="Resource_h4aru"]
+script = ExtResource("1_mjj62")
+name = ""
+rightItem = false
+description = ""
+
+[sub_resource type="Resource" id="Resource_uj3bu"]
+script = ExtResource("1_mjj62")
+name = ""
+rightItem = false
+description = ""
+
+[sub_resource type="Resource" id="Resource_b5r4i"]
+script = ExtResource("1_mjj62")
+name = ""
+rightItem = false
+description = ""
+
+[sub_resource type="Resource" id="Resource_jbo8y"]
+script = ExtResource("1_mjj62")
+name = ""
+rightItem = false
+description = ""
+
+[sub_resource type="Resource" id="Resource_0q7ot"]
+script = ExtResource("1_mjj62")
+name = ""
+rightItem = false
+description = ""
+
+[sub_resource type="Resource" id="Resource_frb3c"]
+script = ExtResource("1_mjj62")
+name = ""
+rightItem = false
+description = ""
+
+[sub_resource type="Resource" id="Resource_qjubl"]
+script = ExtResource("1_mjj62")
+name = ""
+rightItem = false
+description = ""
+
+[resource]
+script = ExtResource("2_1n2qt")
+Items = Array[ExtResource("1_mjj62")]([SubResource("Resource_1qgnj"), SubResource("Resource_q1qb7"), SubResource("Resource_ly7j4"), SubResource("Resource_h4aru"), SubResource("Resource_uj3bu"), SubResource("Resource_b5r4i"), SubResource("Resource_jbo8y"), SubResource("Resource_0q7ot"), SubResource("Resource_frb3c"), SubResource("Resource_qjubl")])

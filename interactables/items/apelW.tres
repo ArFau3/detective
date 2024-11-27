@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://ddxd41o8h3scv"]
+
+[ext_resource type="Script" path="res://interactables/items/item.gd" id="1_1vtka"]
+
+[resource]
+script = ExtResource("1_1vtka")
+name = "apel"
+rightItem = false
+description = "buah apel segar"

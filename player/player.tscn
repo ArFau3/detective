@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dukbgbywyivxn"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_8yw0s"]
+[ext_resource type="Texture2D" uid="uid://bfxcwp6y2t8p" path="res://assets/sementara/entity/player.png" id="1_dke7d"]
+[ext_resource type="Resource" uid="uid://4iurfgyijgan" path="res://player/playerInv.tres" id="2_j1sy5"]
+[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="3_4tq0n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4loo"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryy4b"]
+radius = 8.0
+height = 26.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 3
+script = ExtResource("1_8yw0s")
+speed = 7000
+Backpack = ExtResource("2_j1sy5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -11)
+texture = ExtResource("1_dke7d")
+hframes = 6
+vframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CapsuleShape2D_g4loo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_4tq0n")
+metadata/_edit_lock_ = true
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-1, -8)
+shape = SubResource("CapsuleShape2D_ryy4b")
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]

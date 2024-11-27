@@ -1,0 +1,98 @@
+[gd_scene load_steps=5 format=3 uid="uid://8ktub4tjfqkw"]
+
+[ext_resource type="Script" path="res://scripts/ui_examine.gd" id="1_7j2lc"]
+[ext_resource type="Texture2D" uid="uid://cbdccbfw23gew" path="res://assets/sementara/UI/Planet-Coaster-Console-Edition01222021-010711-12187.webp" id="1_yplhw"]
+[ext_resource type="Resource" uid="uid://4iurfgyijgan" path="res://player/playerInv.tres" id="2_aqsqt"]
+[ext_resource type="Texture2D" uid="uid://cv3kwbvrnjjjt" path="res://assets/sementara/Button.png" id="2_w8ccd"]
+
+[node name="UIExamine" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7j2lc")
+playerInv = ExtResource("2_aqsqt")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.0
+offset_top = -212.5
+offset_right = 289.0
+offset_bottom = 212.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yplhw")
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 9
+
+[node name="Close" type="Button" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -56.0
+offset_bottom = 27.0
+grow_horizontal = 0
+icon = ExtResource("2_w8ccd")
+
+[node name="Nama" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 34.0
+offset_right = 567.0
+offset_bottom = 70.0
+text = "Test"
+
+[node name="Deskripsi" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 91.0
+offset_right = 554.0
+offset_bottom = 380.0
+text = "asdasdada"
+
+[node name="Simpan" type="Button" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -31.0
+offset_right = 33.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Simpan"
+
+[node name="Next" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 882.0
+offset_top = 306.0
+offset_right = 927.0
+offset_bottom = 337.0
+text = "Next"
+
+[node name="Previous" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 198.0
+offset_top = 298.0
+offset_right = 273.0
+offset_bottom = 329.0
+text = "Previous"
+
+[connection signal="pressed" from="NinePatchRect/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="NinePatchRect/Simpan" to="." method="_on_simpan_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]

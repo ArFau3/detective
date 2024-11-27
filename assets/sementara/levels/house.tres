@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dp8ygoh4tydd5"]
+
+[ext_resource type="Texture2D" uid="uid://c6vl68qjjmgqk" path="res://assets/sementara/levels/MasterSimple.png" id="1_r2dcc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k8g7c"]
+texture = ExtResource("1_r2dcc")
+1:8/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.97748, 8, -3.8007, 8, 3.44715, -8, 3.8007)
+12:4/size_in_atlas = Vector2i(1, 2)
+12:4/0 = 0
+11:4/0 = 0
+11:2/size_in_atlas = Vector2i(1, 2)
+11:2/0 = 0
+11:1/0 = 0
+9:0/0 = 0
+9:1/0 = 0
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_k8g7c")

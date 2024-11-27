@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtegreo3o7ic0"]
+
+[ext_resource type="PackedScene" uid="uid://dukbgbywyivxn" path="res://player/player.tscn" id="1_840um"]
+[ext_resource type="Script" path="res://main.gd" id="1_v7awp"]
+[ext_resource type="Script" path="res://canvas_layer.gd" id="3_4vak3"]
+[ext_resource type="PackedScene" uid="uid://8ktub4tjfqkw" path="res://UI/ui_examine.tscn" id="3_r4vr1"]
+[ext_resource type="PackedScene" uid="uid://cv3nwmgoblljo" path="res://levels/levels/level_1.tscn" id="5_ffri4"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_v7awp")
+
+[node name="Level1" parent="." instance=ExtResource("5_ffri4")]
+
+[node name="Player" parent="." instance=ExtResource("1_840um")]
+position = Vector2(124, 71)
+speed = 5000
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("3_4vak3")
+
+[node name="UIExamine" parent="CanvasLayer" instance=ExtResource("3_r4vr1")]
+visible = false
+
+[connection signal="interacting" from="Player" to="CanvasLayer" method="_on_player_interacting"]
+[connection signal="UiClose" from="CanvasLayer/UIExamine" to="CanvasLayer" method="_on_ui_examine_ui_close"]
