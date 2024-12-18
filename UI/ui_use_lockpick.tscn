@@ -1,0 +1,108 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4acgmm3an3g1"]
+
+[ext_resource type="Script" path="res://scripts/ui_use_lockpick.gd" id="1_13okd"]
+[ext_resource type="Texture2D" uid="uid://cbfrbfo37kthl" path="res://assets/sementara/UI/Evil-Genius-2-World-Domination06162021-112143-77547.jpg" id="1_m3mn4"]
+[ext_resource type="Texture2D" uid="uid://cv3kwbvrnjjjt" path="res://assets/sementara/Button.png" id="1_mw2c1"]
+
+[node name="UiUseLockpick" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_13okd")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(578, 425)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.0
+offset_top = -212.5
+offset_right = 289.0
+offset_bottom = 212.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_m3mn4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 145.5
+offset_right = 560.0
+offset_bottom = 334.5
+
+[node name="City" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/VBoxContainer/City"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "City: "
+
+[node name="CityInput" type="LineEdit" parent="NinePatchRect/VBoxContainer/City"]
+custom_minimum_size = Vector2(425, 0)
+layout_mode = 2
+
+[node name="Margin" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Street" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/VBoxContainer/Street"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Street:"
+
+[node name="StreetInput" type="LineEdit" parent="NinePatchRect/VBoxContainer/Street"]
+custom_minimum_size = Vector2(425, 0)
+layout_mode = 2
+
+[node name="Margin2" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Number" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/VBoxContainer/Number"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Number:"
+
+[node name="NumberInput" type="LineEdit" parent="NinePatchRect/VBoxContainer/Number"]
+custom_minimum_size = Vector2(425, 0)
+layout_mode = 2
+
+[node name="Close" type="Button" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -56.0
+offset_bottom = 24.0
+grow_horizontal = 0
+icon = ExtResource("1_mw2c1")
+
+[node name="Go" type="Button" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -31.0
+offset_right = 25.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Go"
+
+[connection signal="pressed" from="NinePatchRect/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="NinePatchRect/Go" to="." method="_on_go_pressed"]

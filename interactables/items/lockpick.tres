@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://2g7gg2f6s38q"]
+
+[ext_resource type="Script" path="res://interactables/items/item.gd" id="1_mpmas"]
+[ext_resource type="Texture2D" uid="uid://cmkqu0awai56i" path="res://assets/interactables/credit_card_2.png" id="2_rbnuv"]
+
+[resource]
+script = ExtResource("1_mpmas")
+name = "Investigation Permit"
+description = "use to enter any room"
+texture = ExtResource("2_rbnuv")
+isImportant = true
+lockpick = 1
+belongTo = "Police"
+reason = ""
+how = ""
+rightWho = false
+rightWhy = false
+rightHow = false

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c17syjtqlfdrx"]
+
+[ext_resource type="Script" path="res://interactables/items/item.gd" id="1_ecaax"]
+[ext_resource type="Texture2D" uid="uid://cw4vch7g2e7l4" path="res://assets/sementara/interactables/paper.jpg" id="2_ubyp6"]
+
+[resource]
+script = ExtResource("1_ecaax")
+name = "Foto Drian"
+description = "Foto dari Drian"
+texture = ExtResource("2_ubyp6")
+isImportant = true
+lockpick = 0
+belongTo = "Drian"
+reason = ""
+how = ""
+rightWho = true
+rightWhy = false
+rightHow = false

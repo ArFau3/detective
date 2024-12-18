@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqiw51m64djrx"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_frrk0"]
+[ext_resource type="Script" path="res://interactables/items/item.gd" id="2_v0pex"]
+[ext_resource type="Texture2D" uid="uid://cw4vch7g2e7l4" path="res://assets/sementara/interactables/paper.jpg" id="3_3xobx"]
+
+[sub_resource type="Resource" id="Resource_7p6yl"]
+script = ExtResource("2_v0pex")
+name = "Alibi"
+description = "For revenge"
+texture = ExtResource("3_3xobx")
+isImportant = true
+lockpick = 0
+belongTo = ""
+reason = "For revenge"
+how = ""
+rightWho = false
+rightWhy = true
+rightHow = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w43u"]
+size = Vector2(22, 19)
+
+[node name="Doc" type="Area2D" groups=["item"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_frrk0")
+data = SubResource("Resource_7p6yl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.00602041, 0.00552994)
+texture = ExtResource("3_3xobx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8w43u")

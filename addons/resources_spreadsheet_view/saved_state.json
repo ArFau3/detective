@@ -3,10 +3,14 @@
     "res://HRRoom/": {
       "resource_local_to_scene": true,
       "resource_name": true
+    },
+    "res://interactables/": {
+      "resource_local_to_scene": true,
+      "resource_name": true
     }
   },
   "recent_paths": [
-    "res://HRRoom/"
+    "res://interactables/"
   ],
   "table_functions": {
     "filter": [

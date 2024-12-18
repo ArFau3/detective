@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://nk2f8lp7ghq6"]
+
+[ext_resource type="Script" path="res://interactables/items/item.gd" id="1_psepw"]
+[ext_resource type="Texture2D" uid="uid://j86rvxvs7jix" path="res://assets/interactables/kitchen_knife_set_p.png" id="2_jodhr"]
+
+[resource]
+script = ExtResource("1_psepw")
+name = "New Knife"
+description = "A new set of knife, who knows for what"
+texture = ExtResource("2_jodhr")
+isImportant = false
+lockpick = 0
+belongTo = "Unknown"
+reason = ""
+how = ""
+rightWho = false
+rightWhy = false
+rightHow = false

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://jfwn74f1at3p"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_2jvdl"]
+[ext_resource type="Resource" uid="uid://2g7gg2f6s38q" path="res://interactables/items/lockpick.tres" id="2_4x0e6"]
+[ext_resource type="Texture2D" uid="uid://cmkqu0awai56i" path="res://assets/interactables/credit_card_2.png" id="3_slsnp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w43u"]
+size = Vector2(16, 10.5)
+
+[node name="Lockpick" type="Area2D" groups=["item"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_2jvdl")
+data = ExtResource("2_4x0e6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_slsnp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_8w43u")

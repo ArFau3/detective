@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b62bo5d4bajr7"]
+
+[ext_resource type="Script" path="res://interactables/items/item.gd" id="1_o3i1w"]
+[ext_resource type="Texture2D" uid="uid://c72h6mcdwc3vb" path="res://assets/interactables/snack1.png" id="2_y8sck"]
+
+[resource]
+script = ExtResource("1_o3i1w")
+name = "Snack"
+rightItem = false
+description = "A bag of snack to sempurnakan harimu"
+texture = ExtResource("2_y8sck")
+isImportant = false
+lockpick = 0
+belongTo = "Unknown"
+reason = ""
+how = ""

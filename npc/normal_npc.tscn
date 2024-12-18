@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkvargnx4yjcl"]
+
+[ext_resource type="Texture2D" uid="uid://b2cx0ggj3ip3w" path="res://assets/sementara/entity/slime.png" id="1_eyrve"]
+[ext_resource type="Script" path="res://scripts/normal_npc.gd" id="1_thd16"]
+[ext_resource type="Resource" uid="uid://ddqfxulq5twy4" path="res://levels/levels/1/dialogs1.tres" id="2_ywdnc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3rbc"]
+size = Vector2(23, 23.5)
+
+[node name="NormalNpc" type="Area2D"]
+script = ExtResource("1_thd16")
+dialogs = ExtResource("2_ywdnc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_eyrve")
+hframes = 7
+vframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w3rbc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

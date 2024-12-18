@@ -1,0 +1,126 @@
+[gd_scene load_steps=6 format=3 uid="uid://qjw4wjnpq28y"]
+
+[ext_resource type="Texture2D" uid="uid://cbfrbfo37kthl" path="res://assets/sementara/UI/Evil-Genius-2-World-Domination06162021-112143-77547.jpg" id="1_0e7vo"]
+[ext_resource type="Script" path="res://scripts/ui_player_inventory.gd" id="1_nwnqn"]
+[ext_resource type="Resource" uid="uid://4iurfgyijgan" path="res://player/playerInv.tres" id="2_2s8qy"]
+[ext_resource type="Texture2D" uid="uid://cv3kwbvrnjjjt" path="res://assets/sementara/Button.png" id="2_lyanq"]
+[ext_resource type="PackedScene" uid="uid://preqhour56mn" path="res://UI/slot_inventory.tscn" id="3_tpgkq"]
+
+[node name="UiPlayerInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nwnqn")
+playerInventory = ExtResource("2_2s8qy")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.5
+offset_top = -130.0
+offset_right = 224.5
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0e7vo")
+
+[node name="Close" type="Button" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_bottom = 37.0
+grow_horizontal = 0
+icon = ExtResource("2_lyanq")
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -73.0
+offset_right = 186.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="SlotInventory" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tpgkq")]
+layout_mode = 2
+
+[node name="SlotInventory2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tpgkq")]
+layout_mode = 2
+
+[node name="SlotInventory3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tpgkq")]
+layout_mode = 2
+
+[node name="SlotInventory4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tpgkq")]
+layout_mode = 2
+
+[node name="SlotInventory5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tpgkq")]
+layout_mode = 2
+
+[node name="SlotInventory6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tpgkq")]
+layout_mode = 2
+
+[node name="SlotInventory7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tpgkq")]
+layout_mode = 2
+
+[node name="SlotInventory8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tpgkq")]
+layout_mode = 2
+
+[node name="SlotInventory9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tpgkq")]
+layout_mode = 2
+
+[node name="SlotInventory10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tpgkq")]
+layout_mode = 2
+
+[node name="DeleteItem" type="Button" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -98.5
+offset_top = -31.0
+offset_right = 98.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "DELETE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 7.0
+offset_right = 216.0
+offset_bottom = 30.0
+
+[node name="GoldLabel" type="RichTextLabel" parent="NinePatchRect/HBoxContainer"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+text = "Gold: "
+
+[node name="Gold" type="RichTextLabel" parent="NinePatchRect/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+initial_position = 2
+dialog_text = "Hapus Item?"
+
+[connection signal="pressed" from="NinePatchRect/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="NinePatchRect/DeleteItem" to="." method="_on_delete_item_pressed"]
+[connection signal="canceled" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

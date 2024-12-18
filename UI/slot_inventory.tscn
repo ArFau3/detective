@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://preqhour56mn"]
+
+[ext_resource type="Script" path="res://scripts/slot_inventory.gd" id="1_0701l"]
+[ext_resource type="Texture2D" uid="uid://y7xl10fq42fw" path="res://assets/sementara/UI/wooden_door_b.png" id="2_vj2if"]
+
+[node name="SlotInventory" type="Button"]
+custom_minimum_size = Vector2(70, 70)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_0701l")
+
+[node name="Bg" type="Sprite2D" parent="."]
+scale = Vector2(4.1875, 4.3125)
+texture = ExtResource("2_vj2if")
+centered = false
+hframes = 2
+frame = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

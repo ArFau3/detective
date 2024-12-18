@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://0bl1kfe2lc3i"]
+
+[ext_resource type="PackedScene" uid="uid://dicr0qw1tpcwx" path="res://interactables/items/knife.tscn" id="1_g7axy"]
+[ext_resource type="Script" path="res://interactables/items/items.gd" id="2_mf72f"]
+
+[resource]
+script = ExtResource("2_mf72f")
+items = Array[PackedScene]([ExtResource("1_g7axy"), null, null])

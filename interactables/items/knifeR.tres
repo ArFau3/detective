@@ -1,9 +1,18 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://vjt15e6prvd6"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://vjt15e6prvd6"]
 
 [ext_resource type="Script" path="res://interactables/items/item.gd" id="1_jlmps"]
+[ext_resource type="Texture2D" uid="uid://c07tvua4h37re" path="res://assets/sementara/interactables/Sheep.png" id="2_0phlf"]
 
 [resource]
 script = ExtResource("1_jlmps")
 name = "knife"
-rightItem = true
 description = "pisau berlumuran darah"
+texture = ExtResource("2_0phlf")
+isImportant = true
+lockpick = 0
+belongTo = "unknown"
+reason = ""
+how = ""
+rightWho = false
+rightWhy = false
+rightHow = true

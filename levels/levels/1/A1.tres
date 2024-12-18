@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://cvlkvdkaw3ck1"]
+
+[ext_resource type="PackedScene" uid="uid://jfwn74f1at3p" path="res://interactables/items/lockpick.tscn" id="1_far7e"]
+[ext_resource type="Script" path="res://interactables/items/items.gd" id="2_ngbq0"]
+
+[resource]
+script = ExtResource("2_ngbq0")
+items = Array[PackedScene]([ExtResource("1_far7e"), null, null, ExtResource("1_far7e"), null])

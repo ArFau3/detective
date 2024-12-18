@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx2s8b6t7sfpv"]
+
+[ext_resource type="Script" path="res://scripts/pemulung.gd" id="1_0j8s8"]
+[ext_resource type="Texture2D" uid="uid://bniu72u2jvxel" path="res://icon.svg" id="2_l7jth"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yru10"]
+size = Vector2(25, 25)
+
+[node name="Pemulung" type="Area2D"]
+script = ExtResource("1_0j8s8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.148438, 0.148438)
+texture = ExtResource("2_l7jth")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_yru10")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

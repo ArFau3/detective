@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://gjk7nqbl1tc2"]
+
+[ext_resource type="Script" path="res://interactables/items/item.gd" id="1_2ndcm"]
+[ext_resource type="Texture2D" uid="uid://dmlueys6kooss" path="res://assets/interactables/scissors.png" id="2_yklqs"]
+
+[resource]
+script = ExtResource("1_2ndcm")
+name = "Scissors"
+description = "A scissor"
+texture = ExtResource("2_yklqs")
+isImportant = false
+lockpick = 0
+belongTo = "Unknown"
+reason = ""
+how = ""
+rightWho = false
+rightWhy = false
+rightHow = false

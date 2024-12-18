@@ -16,17 +16,20 @@ func _physics_process(delta):
 func _input(event: InputEvent) -> void:
 	if interactItem and Input.is_action_just_pressed("interact"):
 		interacting.emit(interactItem)
-		
+		interactItem = []
 #		HACK: uji interactItem: SUCCESS
 	#if Input.is_action_just_pressed("interact"):
 		#interacting.emit(["a","b"])
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("item"):
-		if area.data.rightItem:
-			print_debug()
 		interactItem.append(area)
 
 func _on_hurtbox_area_exited(area: Area2D) -> void:
 	if area.is_in_group("item"):
 		interactItem.erase(area)
+
+func interact()->void:
+	if interactItem:
+		interacting.emit(interactItem)
+		interactItem = []

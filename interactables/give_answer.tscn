@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlhfjcwd1wpue"]
+
+[ext_resource type="Texture2D" uid="uid://dd01drr7tissv" path="res://assets/sementara/interactables/Chest.png" id="1_0f14p"]
+[ext_resource type="Script" path="res://scripts/give_answer.gd" id="1_aeock"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kx8n"]
+
+[node name="GiveAnswer" type="Area2D"]
+script = ExtResource("1_aeock")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0f14p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5kx8n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtegreo3o7ic0"]
+[gd_scene load_steps=11 format=3 uid="uid://dtegreo3o7ic0"]
 
 [ext_resource type="PackedScene" uid="uid://dukbgbywyivxn" path="res://player/player.tscn" id="1_840um"]
 [ext_resource type="Script" path="res://main.gd" id="1_v7awp"]
 [ext_resource type="Script" path="res://canvas_layer.gd" id="3_4vak3"]
 [ext_resource type="PackedScene" uid="uid://8ktub4tjfqkw" path="res://UI/ui_examine.tscn" id="3_r4vr1"]
 [ext_resource type="PackedScene" uid="uid://cv3nwmgoblljo" path="res://levels/levels/level_1.tscn" id="5_ffri4"]
+[ext_resource type="PackedScene" uid="uid://qjw4wjnpq28y" path="res://UI/ui_player_inventory.tscn" id="6_kvnsj"]
+[ext_resource type="PackedScene" uid="uid://46runlu6txio" path="res://UI/ui_shop.tscn" id="7_lyxgx"]
+[ext_resource type="PackedScene" uid="uid://dr00bbxlbhiu0" path="res://UI/ui_chat.tscn" id="8_lhiix"]
+[ext_resource type="PackedScene" uid="uid://d4acgmm3an3g1" path="res://UI/ui_use_lockpick.tscn" id="9_63had"]
+[ext_resource type="PackedScene" uid="uid://b8ptsewkwnl24" path="res://UI/ui_aswer.tscn" id="10_uj2cn"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_v7awp")
@@ -19,8 +24,32 @@ speed = 5000
 process_mode = 3
 script = ExtResource("3_4vak3")
 
+[node name="UiAswer" parent="CanvasLayer" instance=ExtResource("10_uj2cn")]
+visible = false
+
 [node name="UIExamine" parent="CanvasLayer" instance=ExtResource("3_r4vr1")]
 visible = false
 
+[node name="UiPlayerInventory" parent="CanvasLayer" instance=ExtResource("6_kvnsj")]
+visible = false
+
+[node name="UiShop" parent="CanvasLayer" instance=ExtResource("7_lyxgx")]
+visible = false
+
+[node name="UiChat" parent="CanvasLayer" instance=ExtResource("8_lhiix")]
+visible = false
+
+[node name="UiUseLockpick" parent="CanvasLayer" instance=ExtResource("9_63had")]
+visible = false
+
 [connection signal="interacting" from="Player" to="CanvasLayer" method="_on_player_interacting"]
+[connection signal="close_answer" from="CanvasLayer/UiAswer" to="CanvasLayer" method="_on_ui_aswer_close_answer"]
+[connection signal="pick_item" from="CanvasLayer/UiAswer" to="CanvasLayer" method="_on_ui_aswer_pick_item"]
 [connection signal="UiClose" from="CanvasLayer/UIExamine" to="CanvasLayer" method="_on_ui_examine_ui_close"]
+[connection signal="openUiLockpick" from="CanvasLayer/UIExamine" to="CanvasLayer" method="_on_ui_examine_open_ui_lockpick"]
+[connection signal="close_inv" from="CanvasLayer/UiPlayerInventory" to="CanvasLayer" method="_on_ui_player_inventory_close_inv"]
+[connection signal="examiningItem" from="CanvasLayer/UiPlayerInventory" to="CanvasLayer" method="_on_player_interacting"]
+[connection signal="submitItem" from="CanvasLayer/UiPlayerInventory" to="CanvasLayer" method="_on_ui_player_inventory_submit_item"]
+[connection signal="ui_shop_close" from="CanvasLayer/UiShop" to="CanvasLayer" method="_on_ui_shop_ui_shop_close"]
+[connection signal="close_chat" from="CanvasLayer/UiChat" to="CanvasLayer" method="_on_ui_chat_close_chat"]
+[connection signal="closeUiLockpick" from="CanvasLayer/UiUseLockpick" to="CanvasLayer" method="_on_ui_use_lockpick_close_ui_lockpick"]

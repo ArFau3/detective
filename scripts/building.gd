@@ -3,7 +3,7 @@ extends StaticBody2D
 signal enter_room(type, filler)
 
 @export var type:String
-@export var rightPlace: bool
+@export var items: Array[PackedScene]
 
 var player: CharacterBody2D
 
@@ -21,4 +21,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func _input(event: InputEvent) -> void:
 	if player and Input.is_action_just_pressed("interact"):
 		if !player.interactItem:
-			enter_room.emit(type, false)
+			enter_room.emit(type, items)
+
+func setting_building()->void:
+	pass

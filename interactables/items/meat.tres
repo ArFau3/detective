@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c4hdyopvsv2pr"]
+
+[ext_resource type="Script" path="res://interactables/items/item.gd" id="1_2ddek"]
+[ext_resource type="Texture2D" uid="uid://bn0eejpr7spd0" path="res://assets/interactables/meat2.png" id="2_ic78t"]
+
+[resource]
+script = ExtResource("1_2ddek")
+name = "Meat"
+description = "A meat"
+texture = ExtResource("2_ic78t")
+isImportant = false
+lockpick = 0
+belongTo = "Unknown"
+reason = ""
+how = ""
+rightWho = false
+rightWhy = false
+rightHow = false

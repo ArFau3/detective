@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://8n3pa8orbubc"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_ctihj"]
+[ext_resource type="Resource" uid="uid://c17syjtqlfdrx" path="res://interactables/items/level1/fotoR.tres" id="2_6g7m5"]
+[ext_resource type="Texture2D" uid="uid://cw4vch7g2e7l4" path="res://assets/sementara/interactables/paper.jpg" id="3_xv31g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w43u"]
+size = Vector2(22, 19)
+
+[node name="Doc" type="Area2D" groups=["item"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ctihj")
+data = ExtResource("2_6g7m5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.00602041, 0.00552994)
+texture = ExtResource("3_xv31g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8w43u")

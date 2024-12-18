@@ -1,12 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://cv3nwmgoblljo"]
+[gd_scene load_steps=17 format=3 uid="uid://cv3nwmgoblljo"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_cv50e"]
 [ext_resource type="PackedScene" uid="uid://cr1jyeccubbw1" path="res://levels/map_1.tscn" id="1_h1rcw"]
 [ext_resource type="PackedScene" uid="uid://bc08kqdnd5gki" path="res://interactables/house.tscn" id="2_616g0"]
 [ext_resource type="PackedScene" uid="uid://s0jvjyeoed31" path="res://levels/room/interior_house1.tscn" id="3_lqcy8"]
 [ext_resource type="PackedScene" uid="uid://dicr0qw1tpcwx" path="res://interactables/items/knife.tscn" id="3_mj3ig"]
-[ext_resource type="Resource" uid="uid://vjt15e6prvd6" path="res://interactables/items/knifeR.tres" id="5_4a87g"]
+[ext_resource type="Resource" uid="uid://2g7gg2f6s38q" path="res://interactables/items/lockpick.tres" id="4_3j5yc"]
 [ext_resource type="Resource" uid="uid://ddxd41o8h3scv" path="res://interactables/items/apelW.tres" id="5_bd8m5"]
+[ext_resource type="PackedScene" uid="uid://bcndf5v0onp8s" path="res://npc/info_npc.tscn" id="7_jr1yl"]
+[ext_resource type="PackedScene" uid="uid://bheypk2onlmin" path="res://npc/corpse.tscn" id="7_o6puo"]
+[ext_resource type="PackedScene" uid="uid://b7qe1re2bhbog" path="res://interactables/items/level1/doc_pelaku.tscn" id="7_xx38y"]
+[ext_resource type="PackedScene" uid="uid://dx2s8b6t7sfpv" path="res://npc/pemulung.tscn" id="8_0h2uw"]
+[ext_resource type="PackedScene" uid="uid://da1kfd1bam322" path="res://interactables/items/level1/foto_pelaku.tscn" id="8_bectm"]
+[ext_resource type="PackedScene" uid="uid://jfwn74f1at3p" path="res://interactables/items/lockpick.tscn" id="9_13d80"]
+[ext_resource type="PackedScene" uid="uid://dkvargnx4yjcl" path="res://npc/normal_npc.tscn" id="9_620if"]
+[ext_resource type="PackedScene" uid="uid://bqiw51m64djrx" path="res://interactables/items/level1/alibi.tscn" id="10_vyryg"]
+[ext_resource type="PackedScene" uid="uid://dlhfjcwd1wpue" path="res://interactables/give_answer.tscn" id="11_7xx28"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_cv50e")
@@ -24,22 +33,32 @@ position = Vector2(647, 342)
 
 [node name="Knife4" parent="Map1" instance=ExtResource("3_mj3ig")]
 position = Vector2(861, 150)
-data = ExtResource("5_4a87g")
+data = ExtResource("4_3j5yc")
 
 [node name="Knife5" parent="Map1" instance=ExtResource("3_mj3ig")]
 position = Vector2(584, 139)
-data = ExtResource("5_4a87g")
 
 [node name="Knife6" parent="Map1" instance=ExtResource("3_mj3ig")]
 position = Vector2(568, 118)
 data = ExtResource("5_bd8m5")
 
+[node name="InfoNpc" parent="Map1" instance=ExtResource("7_jr1yl")]
+position = Vector2(281, 99)
+Items = Array[PackedScene]([ExtResource("7_xx38y"), ExtResource("8_bectm"), ExtResource("9_13d80"), ExtResource("10_vyryg")])
+
+[node name="Corpse" parent="Map1" instance=ExtResource("7_o6puo")]
+position = Vector2(248, 101)
+
+[node name="Lockpick" parent="Map1" instance=ExtResource("9_13d80")]
+position = Vector2(304, 145)
+
 [node name="Building" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="House" parent="Building" instance=ExtResource("2_616g0")]
 position = Vector2(43, 305)
 type = "bisnis"
-rightPlace = true
+items = Array[PackedScene]([ExtResource("9_13d80"), ExtResource("9_13d80"), ExtResource("9_13d80")])
 
 [node name="House2" parent="Building" instance=ExtResource("2_616g0")]
 position = Vector2(375, 208)
@@ -50,12 +69,41 @@ position = Vector2(987, 176)
 
 [node name="House4" parent="Building" instance=ExtResource("2_616g0")]
 position = Vector2(819, 364)
-rightPlace = true
 
 [node name="House5" parent="Building" instance=ExtResource("2_616g0")]
 position = Vector2(252, 462)
 
 [node name="Room" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
-[node name="InteriorHouse1" parent="Room" instance=ExtResource("3_lqcy8")]
+[node name="Houses" type="Node2D" parent="Room"]
+metadata/_edit_lock_ = true
+
+[node name="InteriorHouse1" parent="Room/Houses" instance=ExtResource("3_lqcy8")]
 position = Vector2(1500, 1500)
+
+[node name="Businesses" type="Node2D" parent="Room"]
+metadata/_edit_lock_ = true
+
+[node name="InteriorHouse1" parent="Room/Businesses" instance=ExtResource("3_lqcy8")]
+position = Vector2(1500, 1500)
+
+[node name="Npc" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Pemulung" parent="Npc" instance=ExtResource("8_0h2uw")]
+position = Vector2(189, 100)
+
+[node name="NormalNpc" parent="Npc" instance=ExtResource("9_620if")]
+position = Vector2(228, 36)
+rightNpc = true
+
+[node name="NormalNpc2" parent="Npc" instance=ExtResource("9_620if")]
+position = Vector2(128, 80)
+
+[node name="NormalNpc3" parent="Npc" instance=ExtResource("9_620if")]
+position = Vector2(750, 156)
+
+[node name="GiveAnswer" parent="." instance=ExtResource("11_7xx28")]
+position = Vector2(78, 132)
+level = 1

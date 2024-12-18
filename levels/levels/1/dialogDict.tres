@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Dialog" load_steps=2 format=3 uid="uid://b0qdh705jrffm"]
+
+[ext_resource type="Script" path="res://npc/dialog_npc.gd" id="1_sqcut"]
+
+[resource]
+script = ExtResource("1_sqcut")
+wrong_dialogs = Array[String]([])
+right_dialogs = Array[String]([])

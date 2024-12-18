@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3bu10dja8oe"]
+
+[ext_resource type="Texture2D" uid="uid://8xblo8dq8grw" path="res://assets/sementara/UI/Planet-Coaster-Console-Edition01222021-010711-12187.png" id="1_dnx2p"]
+[ext_resource type="Script" path="res://scripts/shop_panel.gd" id="2_22sb6"]
+
+[node name="ShopPanel" type="TextureRect"]
+custom_minimum_size = Vector2(678, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_dnx2p")
+expand_mode = 5
+script = ExtResource("2_22sb6")
+
+[node name="Nama" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -216.5
+offset_right = 216.5
+offset_bottom = 22.0
+grow_horizontal = 2
+text = "NAMA"
+
+[node name="Deskripsi" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -216.5
+offset_top = -55.0
+offset_right = 216.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Deskripsi
+"
+
+[node name="Buy" type="Button" parent="."]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 35.0
+offset_right = 667.0
+offset_bottom = 66.0
+text = "Buy
+"
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 110.0
+offset_bottom = 90.0
+expand_mode = 1
+
+[connection signal="pressed" from="Buy" to="." method="_on_buy_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd2fpowwbqfht"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_8k0xi"]
+[ext_resource type="Resource" uid="uid://vjt15e6prvd6" path="res://interactables/items/knifeR.tres" id="2_ol3i1"]
+[ext_resource type="Texture2D" uid="uid://c07tvua4h37re" path="res://assets/sementara/interactables/Sheep.png" id="3_3t400"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w43u"]
+size = Vector2(22, 19)
+
+[node name="PickableItem" type="Area2D" groups=["item"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_8k0xi")
+data = ExtResource("2_ol3i1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.07288e-06, 4.17233e-07)
+scale = Vector2(0.34375, 0.3125)
+texture = ExtResource("3_3t400")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8w43u")

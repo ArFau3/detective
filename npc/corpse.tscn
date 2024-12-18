@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bheypk2onlmin"]
+
+[ext_resource type="Texture2D" uid="uid://c07fglc8umet3" path="res://assets/sementara/entity/corpse.png" id="1_b4uvw"]
+[ext_resource type="Script" path="res://scripts/instanceItems.gd" id="1_ppim1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0pyr"]
+size = Vector2(23, 17)
+
+[node name="Corpse" type="Area2D"]
+script = ExtResource("1_ppim1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b4uvw")
+hframes = 2
+vframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_f0pyr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

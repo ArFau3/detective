@@ -1,9 +1,18 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://ddxd41o8h3scv"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ddxd41o8h3scv"]
 
 [ext_resource type="Script" path="res://interactables/items/item.gd" id="1_1vtka"]
+[ext_resource type="Texture2D" uid="uid://w3n6t8wuhn6u" path="res://assets/interactables/red_apple.png" id="2_lqpf1"]
 
 [resource]
 script = ExtResource("1_1vtka")
 name = "apel"
-rightItem = false
 description = "buah apel segar"
+texture = ExtResource("2_lqpf1")
+isImportant = true
+lockpick = 0
+belongTo = "fruit shop owner"
+reason = ""
+how = ""
+rightWho = false
+rightWhy = false
+rightHow = false

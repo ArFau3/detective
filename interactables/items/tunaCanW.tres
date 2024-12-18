@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d4bb4ca8ss03l"]
+
+[ext_resource type="Script" path="res://interactables/items/item.gd" id="1_b1g5e"]
+[ext_resource type="Texture2D" uid="uid://ds0engsec64xt" path="res://assets/interactables/tuna_can.png" id="2_xboim"]
+
+[resource]
+script = ExtResource("1_b1g5e")
+name = "Tuna Can"
+rightItem = false
+description = "A can of tuna"
+texture = ExtResource("2_xboim")
+isImportant = false
+lockpick = 0
+belongTo = "Unknown"
+reason = ""
+how = ""

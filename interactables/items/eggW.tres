@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d3h814sfpd3eq"]
+
+[ext_resource type="Script" path="res://interactables/items/item.gd" id="1_upp63"]
+[ext_resource type="Texture2D" uid="uid://ly074n0de1if" path="res://assets/interactables/egg_white.png" id="2_uns4l"]
+
+[resource]
+script = ExtResource("1_upp63")
+name = "Egg"
+description = "An egg"
+texture = ExtResource("2_uns4l")
+isImportant = false
+lockpick = 0
+belongTo = "Unknown"
+reason = ""
+how = ""
+rightWho = false
+rightWhy = false
+rightHow = false
